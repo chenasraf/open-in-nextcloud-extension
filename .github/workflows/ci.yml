@@ -24,6 +24,7 @@ jobs:
       - run: pnpm test
       - run: pnpm zip
       - run: pnpm zip:firefox
+      - run: pnpm lint:firefox
       - uses: actions/upload-artifact@v7
         with:
           name: extension
