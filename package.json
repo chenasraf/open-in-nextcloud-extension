@@ -1,0 +1,26 @@
+{
+  "name": "open-in-nextcloud",
+  "description": "Open Nextcloud App Store apps directly in your own Nextcloud instance",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "typecheck": "wxt prepare && tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "postinstall": "wxt prepare"
+  },
+  "devDependencies": {
+    "happy-dom": "^21.0.3",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.5",
+    "wxt": "^0.21.4"
+  },
+  "packageManager": "pnpm@11.7.0"
+}
