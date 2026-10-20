@@ -2,7 +2,7 @@
   "name": "open-in-nextcloud",
   "description": "Open Nextcloud App Store apps directly in your own Nextcloud instance",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "scripts": {
     "dev": "wxt",
