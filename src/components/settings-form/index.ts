@@ -46,9 +46,9 @@ const TEMPLATE = /* html */ `
 `;
 
 export async function renderSettingsForm(container: HTMLElement): Promise<void> {
-  container.innerHTML = TEMPLATE;
-
-  const form = container.querySelector('form')!;
+  // DOMParser rather than innerHTML, which the Firefox add-on linter flags.
+  const form = new DOMParser().parseFromString(TEMPLATE, 'text/html').querySelector('form')!;
+  container.replaceChildren(form);
   const fields = form.elements as HTMLFormControlsCollection & {
     instanceUrl: HTMLInputElement;
     instanceName: HTMLInputElement;

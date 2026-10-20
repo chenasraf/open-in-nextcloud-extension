@@ -1,5 +1,5 @@
 import css from './style.css?inline';
-import { ICON_ARROW_FORWARD, ICON_OPEN_IN_NEW, ICON_SETTINGS } from '../icons';
+import { createIcon, ICON_ARROW_FORWARD, ICON_OPEN_IN_NEW, ICON_SETTINGS } from '../icons';
 import type { ButtonTheme } from '../types';
 
 export const nextcloudTheme: ButtonTheme = {
@@ -24,7 +24,7 @@ export const nextcloudTheme: ButtonTheme = {
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
       }
-      icon.innerHTML = action.newTab ? ICON_OPEN_IN_NEW : ICON_ARROW_FORWARD;
+      icon.append(createIcon(document, action.newTab ? ICON_OPEN_IN_NEW : ICON_ARROW_FORWARD));
       link.append(text, icon);
     } else {
       link.href = '#';
@@ -33,7 +33,7 @@ export const nextcloudTheme: ButtonTheme = {
         event.preventDefault();
         action.onClick();
       });
-      icon.innerHTML = ICON_SETTINGS;
+      icon.append(createIcon(document, ICON_SETTINGS));
       link.append(icon, text);
     }
 
