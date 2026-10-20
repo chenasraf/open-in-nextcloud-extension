@@ -77,6 +77,8 @@ CSP (`style-src 'self'`) blocks inline styles.
 
 ### Icons
 
+After editing `assets/icon.svg`, regenerate the PNGs in `public/icon/`:
+
 ```sh
-for s in 16 32 48 96 128; do rsvg-convert -w $s -h $s assets/icon.svg -o public/icon/$s.png; done
+pnpm icons
 ```
